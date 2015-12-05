@@ -1,0 +1,87 @@
+﻿USE CASE COFFEE MANAGEMENT SOFTWARE
+
+//
+// 40 UC - 1
+//
+
+
+
+1. Quản lý bán hàng: Quản lý nghiệp vụ bán hàng
+	1.1: UC Tạo hóa đơn
+	1.2: UC In hóa đơn tạm tính
+	1.3: UC Gửi thông tin món gọi cho nhà bếp
+	1.4: UC In hóa đơn	
+	1.5: UC Cập nhật thông tin hóa đơn
+	1.6: UC Xóa hóa đơn
+	1.7: UC Xem thông tin hóa đơn
+	1.8: UC Tự động quy đổi số trừ nguyên liệu từ món bán được
+	1.9: UC Tính VAT, Khuyến mãi
+	
+2. Quản lý nhập hàng: Quản lý nghiệp vụ nhập hàng
+	2.1: UC Tạo phiếu nhập hàng
+	2.2: UC Chỉnh sửa phiếu nhập hàng
+	2.3: UC Xóa phiếu nhập hàng
+	2.4: UC Xem thông tin phiếu nhập hàng
+	
+3. Quản lý khuyến mãi
+	3.1: UC Thêm loại khuyến mãi
+	3.2: UC Chỉnh sửa loại khuyến mãi
+	3.3: UC Xóa loại khuyến mãi
+	3.4: UC Xem loại khuyến mãi
+Yêu cầu tạo module: Cho phép tạo voucher khuyến mãi, mỗi voucher có một mã code bão mật tạo random + code người dùng nhập vào
+, mã hóa theo QR code(hoặc in code trược tiếp lên voucher - tìm giải pháp), in lên voucher. 
+Chia làm 2 loại khuyến mãi: Khuyến mãi tiền mặt và khuyến mãi hóa đơn. Mỗi khuyến mãi gồm có các 
+thông tin sau: ID, Code, Loại Khuyến mãi, Gia trị, Ngày bắt đầu, Ngày hết hạn.
+
+
+
+4. Quản lý nguyên liệu (kho)
+	4.1: UC Thêm nguyên liệu mới  OK
+	4.2: UC Cập nhật nguyên liệu OK
+	4.3: UC Xóa nguyên liệu OK
+	4.4: UC Cảnh báo nguyên liệu sắp hết.
+	
+5. Quản lý thực đơn
+	5.1: UC Tạo loại món - OK
+	5.2: UC Chỉnh sửa loại món - OK
+	5.3: UC Tạo món mới - OK
+	5.4: UC Chỉnh sửa món - OK
+	5.5: UC Xem thông tin thực đơn - OK
+
+6. Báo cáo
+	6.1: UC Báo cáo tồn kho
+	6.2: UC Báo cáo doanh thu 
+	6.3: UC Báo cáo hàng nhập
+	6.4: UC Báo cáo sản phẩn bán được
+
+7. Quản lý người dùng
+	7.1: UC Đăng ký người dùng mới
+	7.2: UC Cập nhật thông tin
+	7.3: UC Xem thông tin tài khoản
+	7.4: UC Xóa người dùng
+	7.5: UC Phân quyền người dùng
+
+8. Quản lý khu vực, bàn
+	8.1: UC Tạo khu vực mới - OK
+	8.2: UC Chỉnh sửa khu vực - OK
+	8.3: UC Tạo bàn mới - OK
+	8.4: UC Chỉnh sửa bàn - OK
+	8.5: UC Thay đổi tình trạng bàn - OK
+	8.5: UC Xem thông tin khu vực, bàn - OK
+//
+//
+// 
+
+PHÂN TÍCH CƠ SỞ DỮ LIỆU
+
+BAN: 			Ma_ban, Ten, Ma_khu_vuc, Trang_thai
+KHU_VUC: 		Ma_khu_vuc, Ten
+NGUOI_DUNG:		Ma_nguoi_dung, Ten_tai_khoan, Mat_khau, Ma_quyen.
+PHAN_QUYEN:		Ma_quyen, Ten_quyen.
+MON			Ma_mon, Ten_mon, Ma_loai_mon, Don_gia (Hinh_anh)
+LOAI_MON		Ma_loai_mon, Ten_loai_mon
+NGUYEN_LIEU		Ma_nguyen_lieu, Ten_nguyen_lieu, (Don_gia_nhap, So_luong_ton)
+KHUYEN_MAI		Ma_khuyen_mai???
+HOA_DON			Ma_hoa_don, So_hoa_don,
+DON_VI			Ma_don_vi, Ten_Don_VI
+

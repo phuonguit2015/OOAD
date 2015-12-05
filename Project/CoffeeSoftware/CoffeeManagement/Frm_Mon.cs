@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Linq;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace CoffeeManagement
     public partial class Frm_Mon : Form
     {
         private LoaiMonBLL _loaiMonBLL = new LoaiMonBLL();
+        private DonViBLL _donViBLL = new DonViBLL();
         private List<int> _listUpdate = new List<int>();      // Danh sách các đối tượng cần update
         DataTable dt = new DataTable();
         private MonBLL _monBLL = new MonBLL();
@@ -23,15 +25,20 @@ namespace CoffeeManagement
         public Frm_Mon()
         {
             InitializeComponent();        
-
-            lkup_LoaiMon.DataSource = Utils.Util.ConvertToDataTable<LOAI_MON>(_loaiMonBLL.LayDanhSachLoaiMon());
-            lkup_LoaiMon.DisplayMember = "Ten_Loai_Mon";
-            lkup_LoaiMon.ValueMember = "ID_Loai_Mon";
+            
         }
 
 
         private void LoadDataSource()
         {
+            lkup_DonVi.DataSource = Utils.Util.ConvertToDataTable<DON_VI>(_donViBLL.LayDanhSachDonVi());
+            lkup_DonVi.DisplayMember = "Ten_Don_Vi";
+            lkup_DonVi.ValueMember = "ID_Don_Vi";
+
+            lkup_LoaiMon.DataSource = Utils.Util.ConvertToDataTable<LOAI_MON>(_loaiMonBLL.LayDanhSachLoaiMon());
+            lkup_LoaiMon.DisplayMember = "Ten_Loai_Mon";
+            lkup_LoaiMon.ValueMember = "ID_Loai_Mon";
+
             dt = Utils.Util.ConvertToDataTable<MON>(_monBLL.LayDanhSachMon());
             gridControl1.DataSource = dt;
             btn_Luu_Lai.Enabled = false;
@@ -82,8 +89,11 @@ namespace CoffeeManagement
                 _mon.Ten_Mon = gridView1.GetRowCellValue(id, "Ten_Mon").ToString();
                 _mon.ID_Loai_Mon = int.Parse(gridView1.GetRowCellValue(id, "ID_Loai_Mon").ToString());
                 _mon.Don_Gia = decimal.Parse(gridView1.GetRowCellValue(id, "Don_Gia").ToString());
-                //_mon.Hinh_Anh = Util.ImageToByteArray(gridView1.GetRowCellValue())
-
+                _mon.ID_Don_Vi = int.Parse(gridView1.GetRowCellValue(id, "ID_Don_Vi").ToString());
+                if (gridView1.GetRowCellValue(id, "Hinh_Anh") != System.DBNull.Value)
+                {
+                    _mon.Hinh_Anh = (Binary)gridView1.GetRowCellValue(id, "Hinh_Anh");
+                }
                 if (!_monBLL.KiemTraTenMonTonTai(_mon.Ten_Mon, _mon.ID_Mon))
                 {
                     _monBLL.CapNhatMon(_mon);
@@ -109,7 +119,7 @@ namespace CoffeeManagement
                 }
                 else
                 {
-                    Notification.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Các ID chưa được cập nhật (" + error + "). Lỗi: Tên Khu Vực đã tồn tại.");
+                    Notification.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Các ID chưa được cập nhật (" + error + "). Lỗi: Tên món đã tồn tại.");
                 }
             }
             else

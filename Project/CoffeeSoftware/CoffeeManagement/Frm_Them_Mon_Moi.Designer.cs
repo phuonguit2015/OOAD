@@ -38,9 +38,12 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btn_Them_Moi = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.lkup_DonVi = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.lkup_Loai_Mon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spin_Gia_Ban.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Hinh_Anh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkup_DonVi.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lkup_Loai_Mon
@@ -87,7 +90,7 @@
             trackBarContextButton1.Name = "TrackBarContextButton";
             trackBarContextButton1.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
             this.pic_Hinh_Anh.Properties.ContextButtons.Add(trackBarContextButton1);
-            this.pic_Hinh_Anh.Properties.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureEdit1.Properties.InitialImage")));
+            this.pic_Hinh_Anh.Properties.InitialImage = ((System.Drawing.Image)(resources.GetObject("pic_Hinh_Anh.Properties.InitialImage")));
             this.pic_Hinh_Anh.Properties.NullText = "Hình Ảnh";
             this.pic_Hinh_Anh.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pic_Hinh_Anh.Size = new System.Drawing.Size(119, 121);
@@ -120,18 +123,40 @@
             // btn_Them_Moi
             // 
             this.btn_Them_Moi.Image = ((System.Drawing.Image)(resources.GetObject("btn_Them_Moi.Image")));
-            this.btn_Them_Moi.Location = new System.Drawing.Point(360, 118);
+            this.btn_Them_Moi.Location = new System.Drawing.Point(361, 152);
             this.btn_Them_Moi.Name = "btn_Them_Moi";
             this.btn_Them_Moi.Size = new System.Drawing.Size(87, 23);
             this.btn_Them_Moi.TabIndex = 4;
             this.btn_Them_Moi.Text = "THÊM MỚI";
             this.btn_Them_Moi.Click += new System.EventHandler(this.btn_Them_Moi_Click);
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(150, 114);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(54, 13);
+            this.labelControl4.TabIndex = 8;
+            this.labelControl4.Text = "Đơn Vị Tính";
+            // 
+            // lkup_DonVi
+            // 
+            this.lkup_DonVi.Location = new System.Drawing.Point(226, 111);
+            this.lkup_DonVi.Name = "lkup_DonVi";
+            this.lkup_DonVi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkup_DonVi.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Ten_Don_Vi", "ĐƠN VỊ")});
+            this.lkup_DonVi.Properties.NullText = "[Chọn đơn vị]";
+            this.lkup_DonVi.Size = new System.Drawing.Size(222, 20);
+            this.lkup_DonVi.TabIndex = 9;
+            // 
             // Frm_Them_Mon_Moi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 150);
+            this.ClientSize = new System.Drawing.Size(472, 187);
+            this.Controls.Add(this.lkup_DonVi);
+            this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.btn_Them_Moi);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
@@ -142,15 +167,14 @@
             this.Controls.Add(this.lkup_Loai_Mon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(488, 189);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(488, 189);
             this.Name = "Frm_Them_Mon_Moi";
             this.Text = "THÊM MÓN MỚI";
             this.Load += new System.EventHandler(this.Frm_Them_Mon_Moi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lkup_Loai_Mon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spin_Gia_Ban.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Hinh_Anh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkup_DonVi.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +190,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton btn_Them_Moi;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LookUpEdit lkup_DonVi;
     }
 }

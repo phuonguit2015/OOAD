@@ -47,16 +47,20 @@
             this.col_Loai_Mon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lkup_LoaiMon = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.col_Ten_Mon = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col_Hinh_Anh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.img_HinhAnh = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.col_Don_Gia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.spin_Don_Gia = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.img_HinhAnh = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
+            this.pic_HinhAnh = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
+            this.col_DonVi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lkup_DonVi = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkup_LoaiMon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_HinhAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spin_Don_Gia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_HinhAnh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_HinhAnh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkup_DonVi)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -120,7 +124,7 @@
             this.btn_Luu_Lai.Id = 2;
             this.btn_Luu_Lai.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_Luu_Lai.LargeGlyph")));
             this.btn_Luu_Lai.Name = "btn_Luu_Lai";
-            this.btn_Luu_Lai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Xoa_ItemClick);
+            this.btn_Luu_Lai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Luu_Lai_ItemClick);
             // 
             // btn_Lam_Moi
             // 
@@ -178,7 +182,9 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.lkup_LoaiMon,
             this.img_HinhAnh,
-            this.spin_Don_Gia});
+            this.spin_Don_Gia,
+            this.pic_HinhAnh,
+            this.lkup_DonVi});
             this.gridControl1.Size = new System.Drawing.Size(600, 316);
             this.gridControl1.TabIndex = 6;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -190,8 +196,8 @@
             this.col_ID,
             this.col_Loai_Mon,
             this.col_Ten_Mon,
-            this.col_Hinh_Anh,
-            this.col_Don_Gia});
+            this.col_Don_Gia,
+            this.col_DonVi});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
@@ -207,9 +213,13 @@
             this.gridView1.OptionsView.ShowGroupExpandCollapseButtons = false;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_Loai_Mon, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
+            this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
             // 
             // col_ID
             // 
+            this.col_ID.AppearanceCell.Options.UseTextOptions = true;
+            this.col_ID.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.col_ID.AppearanceHeader.Options.UseTextOptions = true;
             this.col_ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_ID.Caption = "ID";
@@ -221,6 +231,8 @@
             // 
             // col_Loai_Mon
             // 
+            this.col_Loai_Mon.AppearanceCell.Options.UseTextOptions = true;
+            this.col_Loai_Mon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.col_Loai_Mon.AppearanceHeader.Options.UseTextOptions = true;
             this.col_Loai_Mon.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_Loai_Mon.Caption = "LOẠI MÓN";
@@ -243,36 +255,21 @@
             // 
             // col_Ten_Mon
             // 
+            this.col_Ten_Mon.AppearanceCell.Options.UseTextOptions = true;
+            this.col_Ten_Mon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.col_Ten_Mon.AppearanceHeader.Options.UseTextOptions = true;
             this.col_Ten_Mon.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_Ten_Mon.Caption = "TÊN MÓN";
             this.col_Ten_Mon.FieldName = "Ten_Mon";
             this.col_Ten_Mon.Name = "col_Ten_Mon";
             this.col_Ten_Mon.Visible = true;
-            this.col_Ten_Mon.VisibleIndex = 3;
+            this.col_Ten_Mon.VisibleIndex = 2;
             this.col_Ten_Mon.Width = 144;
-            // 
-            // col_Hinh_Anh
-            // 
-            this.col_Hinh_Anh.AppearanceHeader.Options.UseTextOptions = true;
-            this.col_Hinh_Anh.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_Hinh_Anh.Caption = "HÌNH ẢNH";
-            this.col_Hinh_Anh.ColumnEdit = this.img_HinhAnh;
-            this.col_Hinh_Anh.FieldName = "Hinh_Anh";
-            this.col_Hinh_Anh.Name = "col_Hinh_Anh";
-            this.col_Hinh_Anh.Visible = true;
-            this.col_Hinh_Anh.VisibleIndex = 2;
-            this.col_Hinh_Anh.Width = 116;
-            // 
-            // img_HinhAnh
-            // 
-            this.img_HinhAnh.AutoHeight = false;
-            this.img_HinhAnh.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.img_HinhAnh.Name = "img_HinhAnh";
             // 
             // col_Don_Gia
             // 
+            this.col_Don_Gia.AppearanceCell.Options.UseTextOptions = true;
+            this.col_Don_Gia.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.col_Don_Gia.AppearanceHeader.Options.UseTextOptions = true;
             this.col_Don_Gia.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_Don_Gia.Caption = "ĐƠN GIÁ";
@@ -280,7 +277,7 @@
             this.col_Don_Gia.FieldName = "Don_Gia";
             this.col_Don_Gia.Name = "col_Don_Gia";
             this.col_Don_Gia.Visible = true;
-            this.col_Don_Gia.VisibleIndex = 4;
+            this.col_Don_Gia.VisibleIndex = 3;
             this.col_Don_Gia.Width = 171;
             // 
             // spin_Don_Gia
@@ -289,6 +286,44 @@
             this.spin_Don_Gia.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spin_Don_Gia.Name = "spin_Don_Gia";
+            // 
+            // img_HinhAnh
+            // 
+            this.img_HinhAnh.AutoHeight = false;
+            this.img_HinhAnh.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.img_HinhAnh.Name = "img_HinhAnh";
+            this.img_HinhAnh.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            // 
+            // pic_HinhAnh
+            // 
+            this.pic_HinhAnh.Name = "pic_HinhAnh";
+            this.pic_HinhAnh.NullText = " ";
+            this.pic_HinhAnh.PictureStoreMode = DevExpress.XtraEditors.Controls.PictureStoreMode.ByteArray;
+            this.pic_HinhAnh.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            // 
+            // col_DonVi
+            // 
+            this.col_DonVi.AppearanceCell.Options.UseTextOptions = true;
+            this.col_DonVi.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.col_DonVi.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_DonVi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_DonVi.Caption = "ĐƠN VỊ TÍNH";
+            this.col_DonVi.ColumnEdit = this.lkup_DonVi;
+            this.col_DonVi.FieldName = "ID_Don_Vi";
+            this.col_DonVi.Name = "col_DonVi";
+            this.col_DonVi.Visible = true;
+            this.col_DonVi.VisibleIndex = 4;
+            // 
+            // lkup_DonVi
+            // 
+            this.lkup_DonVi.AutoHeight = false;
+            this.lkup_DonVi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkup_DonVi.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Ten_Don_Vi", "ĐƠN VỊ")});
+            this.lkup_DonVi.Name = "lkup_DonVi";
+            this.lkup_DonVi.NullText = "[Chọn Đơn Vịl]";
             // 
             // Frm_Mon
             // 
@@ -307,8 +342,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkup_LoaiMon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_HinhAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spin_Don_Gia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_HinhAnh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_HinhAnh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkup_DonVi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,9 +370,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn col_Loai_Mon;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lkup_LoaiMon;
         private DevExpress.XtraGrid.Columns.GridColumn col_Ten_Mon;
-        private DevExpress.XtraGrid.Columns.GridColumn col_Hinh_Anh;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit img_HinhAnh;
         private DevExpress.XtraGrid.Columns.GridColumn col_Don_Gia;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit spin_Don_Gia;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit pic_HinhAnh;
+        private DevExpress.XtraGrid.Columns.GridColumn col_DonVi;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lkup_DonVi;
     }
 }

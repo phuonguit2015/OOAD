@@ -16,7 +16,7 @@ namespace CoffeeManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Mon());
+            Application.Run(new Frm_Home());
         }
     }
 }

@@ -24,15 +24,17 @@ namespace CoffeeManagement.BLL
         {
             IEnumerable<BAN> query = from b in dbContext.BANs where b.Ten_Ban == _tenBan
                                      select b;
-            if (query.Count() >= 1)
-                return true;
-            if (id != -1)
+            if (0 < query.Count() && query.Count() <= 2)
             {
-                query = query.Where(b => b.ID_Ban == id);
-                if(query.Count() == 1)
+                if (id != -1)
                 {
-                    return false;
+                    query = query.Where(m => m.ID_Ban == id);
+                    if (query.Count() == 1)
+                    {
+                        return false;
+                    }
                 }
+                return true;
             }
             return false;
         }
@@ -40,7 +42,7 @@ namespace CoffeeManagement.BLL
         public void CapNhatBan(BAN b)
         {
             BAN _ban = dbContext.BANs.Single<BAN>(x => x.ID_Ban == b.ID_Ban);
-            _ban.Ten_Ban = b.Ten_Ban;
+            _ban.Ten_Ban = b.Ten_Ban;           
             _ban.KHU_VUC = dbContext.KHU_VUCs.Single<KHU_VUC>(kv => kv.ID_Khu_Vuc == b.ID_Khu_Vuc);
             // update 
             dbContext.SubmitChanges();

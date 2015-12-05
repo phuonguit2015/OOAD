@@ -17,15 +17,16 @@ namespace CoffeeManagement
         public Frm_Ban()
         {
             InitializeComponent();
-
-            lkup_KhuVuc.DataSource = Utils.Util.ConvertToDataTable<KHU_VUC>(_khuVucBLL.LayDanhSachKhuVuc());
-            lkup_KhuVuc.DisplayMember = "Ten_Khu_Vuc";
-            lkup_KhuVuc.ValueMember = "ID_Khu_Vuc";
         }
 
 
         private void LoadDataSource()
         {
+
+            lkup_KhuVuc.DataSource = Utils.Util.ConvertToDataTable<KHU_VUC>(_khuVucBLL.LayDanhSachKhuVuc());
+            lkup_KhuVuc.DisplayMember = "Ten_Khu_Vuc";
+            lkup_KhuVuc.ValueMember = "ID_Khu_Vuc";
+
             dt = Utils.Util.ConvertToDataTable<BAN>(_banBLL.LayDanhSachBan());
             gridControl1.DataSource = dt;
             btn_Luu_Lai.Enabled = false;

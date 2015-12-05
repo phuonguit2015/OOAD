@@ -25,15 +25,17 @@ namespace CoffeeManagement.BLL
             IEnumerable<MON> query = from m in dbContext.MONs
                                      where m.Ten_Mon == _tenMon
                                      select m;
-            if (query.Count() >= 1)
-                return true;
-            if (id != -1)
+            if (0 < query.Count() && query.Count() <= 2)
             {
-                query = query.Where(m => m.ID_Mon == id);
-                if (query.Count() == 1)
+                if (id != -1)
                 {
-                    return false;
+                    query = query.Where(m => m.ID_Mon == id);
+                    if (query.Count() == 1 )
+                    {
+                        return false;
+                    }                   
                 }
+                return true;
             }
             return false;
         }
@@ -44,6 +46,9 @@ namespace CoffeeManagement.BLL
             _mon.Ten_Mon = m.Ten_Mon;
             _mon.Hinh_Anh = m.Hinh_Anh;            
             _mon.LOAI_MON = dbContext.LOAI_MONs.Single<LOAI_MON>(l => l.ID_Loai_Mon == m.ID_Loai_Mon);
+            _mon.Don_Gia = m.Don_Gia;
+            _mon.DON_VI = dbContext.DON_VIs.Single<DON_VI>(dv => dv.ID_Don_Vi == m.ID_Don_Vi);
+
             // update 
             dbContext.SubmitChanges();
         }

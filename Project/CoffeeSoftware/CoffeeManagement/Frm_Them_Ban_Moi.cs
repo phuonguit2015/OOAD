@@ -56,7 +56,7 @@ namespace CoffeeManagement
             Frm_Them_Khu_Vuc f = new Frm_Them_Khu_Vuc();
             if(f.ShowDialog() == DialogResult.Cancel)
             {
-                LoadDataCombobox();
+                LoadDataCombobox();                
             }
         }
     }

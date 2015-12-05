@@ -93,12 +93,12 @@ namespace CoffeeManagement
                 }
                 else
                 {
-                    Notification.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Các ID chưa được cập nhật (" + error + "). Lỗi: Tên Khu Vực đã tồn tại.");
+                    Notification.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Các ID chưa được cập nhật (" + error + "). Lỗi: Tên loại món đã tồn tại.");
                 }
             }
             else
             {
-                Notification.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Tên khu vực đã tồn tại.");
+                Notification.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Tên loại món đã tồn tại.");
             }
             LoadDataSource();
         }
