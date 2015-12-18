@@ -85,3 +85,9 @@ KHUYEN_MAI		Ma_khuyen_mai???
 HOA_DON			Ma_hoa_don, So_hoa_don,
 DON_VI			Ma_don_vi, Ten_Don_VI
 
+NHA_CUNG_CAP 		MaNCC, TenNCC, DiaChi, SoDienThoai
+PHIEU_NHAP_HANG		Ma_Nhap_hang, So_Phieu_Nhap, Nhan_Vien_Nhap, Ngay_Lap, Tong_Thanh_Tien
+CHI_TIET_PHIEU_NHAP	Ma_CT, So_Phieu_Nhap, Ma_Nguyen_Lieu, So_Luong, Don_Gia, Thanh_Tien
+
+THAM_SO			So_Phieu_Nhap, So_Phieu_Xuat.
+	

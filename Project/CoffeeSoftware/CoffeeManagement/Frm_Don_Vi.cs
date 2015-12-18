@@ -76,7 +76,7 @@ namespace CoffeeManagement
                 DON_VI _donVi = new DON_VI();
                 _donVi.ID_Don_Vi = int.Parse(gridView1.GetRowCellValue(id, "ID_Don_Vi").ToString());
                 _donVi.Ten_Don_Vi = gridView1.GetRowCellValue(id, "Ten_Don_Vi").ToString();
-                if (!_donViBLL.KiemTraTenDonViTonTai(_donVi.Ten_Don_Vi))
+                if (!_donViBLL.KiemTraTenDonViTonTai(_donVi.Ten_Don_Vi,_donVi.ID_Don_Vi))
                 {
                     _donViBLL.CapNhatDonVi(_donVi);
                     isUpdate = true;

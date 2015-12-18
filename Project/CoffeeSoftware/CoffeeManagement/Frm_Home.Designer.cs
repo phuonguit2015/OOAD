@@ -33,6 +33,13 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btn_DanhMuc = new DevExpress.XtraBars.BarSubItem();
+            this.btn_Ban = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_KhuVuc = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ThucDon = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_LoaiMon = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_NguyenLieu = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_DonVi = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_NhaCungCap = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Phuc_Vu = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Thuc_Don = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Kho_Hang = new DevExpress.XtraBars.BarButtonItem();
@@ -47,12 +54,6 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.tabMDI = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.btn_ThucDon = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_NguyenLieu = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_DonVi = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Ban = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_KhuVuc = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_LoaiMon = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMDI)).BeginInit();
             this.SuspendLayout();
@@ -83,9 +84,10 @@
             this.btn_DonVi,
             this.btn_Ban,
             this.btn_KhuVuc,
-            this.btn_LoaiMon});
+            this.btn_LoaiMon,
+            this.btn_NhaCungCap});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 16;
+            this.barManager1.MaxItemId = 17;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -128,8 +130,59 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_ThucDon, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_LoaiMon, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_NguyenLieu, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_DonVi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_DonVi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_NhaCungCap, true)});
             this.btn_DanhMuc.Name = "btn_DanhMuc";
+            // 
+            // btn_Ban
+            // 
+            this.btn_Ban.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.btn_Ban.Caption = "BÀN";
+            this.btn_Ban.Id = 13;
+            this.btn_Ban.Name = "btn_Ban";
+            this.btn_Ban.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Ban_ItemClick);
+            // 
+            // btn_KhuVuc
+            // 
+            this.btn_KhuVuc.Caption = "KHU VỰC";
+            this.btn_KhuVuc.Id = 14;
+            this.btn_KhuVuc.Name = "btn_KhuVuc";
+            this.btn_KhuVuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_KhuVuc_ItemClick);
+            // 
+            // btn_ThucDon
+            // 
+            this.btn_ThucDon.Caption = "THỰC ĐƠN";
+            this.btn_ThucDon.Id = 10;
+            this.btn_ThucDon.Name = "btn_ThucDon";
+            this.btn_ThucDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ThucDon_ItemClick);
+            // 
+            // btn_LoaiMon
+            // 
+            this.btn_LoaiMon.Caption = "LOẠI MÓN";
+            this.btn_LoaiMon.Id = 15;
+            this.btn_LoaiMon.Name = "btn_LoaiMon";
+            this.btn_LoaiMon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_LoaiMon_ItemClick);
+            // 
+            // btn_NguyenLieu
+            // 
+            this.btn_NguyenLieu.Caption = "NGUYÊN LIỆU";
+            this.btn_NguyenLieu.Id = 11;
+            this.btn_NguyenLieu.Name = "btn_NguyenLieu";
+            this.btn_NguyenLieu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_NguyenLieu_ItemClick);
+            // 
+            // btn_DonVi
+            // 
+            this.btn_DonVi.Caption = "ĐƠN VỊ";
+            this.btn_DonVi.Id = 12;
+            this.btn_DonVi.Name = "btn_DonVi";
+            this.btn_DonVi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DonVi_ItemClick);
+            // 
+            // btn_NhaCungCap
+            // 
+            this.btn_NhaCungCap.Caption = "NHÀ CUNG CẤP";
+            this.btn_NhaCungCap.Id = 16;
+            this.btn_NhaCungCap.Name = "btn_NhaCungCap";
+            this.btn_NhaCungCap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_NhaCungCap_ItemClick);
             // 
             // btn_Phuc_Vu
             // 
@@ -169,7 +222,7 @@
             // 
             // btn_Kho_Hang
             // 
-            this.btn_Kho_Hang.Caption = "KHO HÀNG";
+            this.btn_Kho_Hang.Caption = "NHẬP HÀNG";
             this.btn_Kho_Hang.Id = 2;
             this.btn_Kho_Hang.ItemAppearance.Hovered.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Kho_Hang.ItemAppearance.Hovered.Options.UseFont = true;
@@ -312,49 +365,6 @@
             // 
             this.tabMDI.MdiParent = this;
             // 
-            // btn_ThucDon
-            // 
-            this.btn_ThucDon.Caption = "THỰC ĐƠN";
-            this.btn_ThucDon.Id = 10;
-            this.btn_ThucDon.Name = "btn_ThucDon";
-            this.btn_ThucDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ThucDon_ItemClick);
-            // 
-            // btn_NguyenLieu
-            // 
-            this.btn_NguyenLieu.Caption = "NGUYÊN LIỆU";
-            this.btn_NguyenLieu.Id = 11;
-            this.btn_NguyenLieu.Name = "btn_NguyenLieu";
-            this.btn_NguyenLieu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_NguyenLieu_ItemClick);
-            // 
-            // btn_DonVi
-            // 
-            this.btn_DonVi.Caption = "ĐƠN VỊ";
-            this.btn_DonVi.Id = 12;
-            this.btn_DonVi.Name = "btn_DonVi";
-            this.btn_DonVi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DonVi_ItemClick);
-            // 
-            // btn_Ban
-            // 
-            this.btn_Ban.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.btn_Ban.Caption = "BÀN";
-            this.btn_Ban.Id = 13;
-            this.btn_Ban.Name = "btn_Ban";
-            this.btn_Ban.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Ban_ItemClick);
-            // 
-            // btn_KhuVuc
-            // 
-            this.btn_KhuVuc.Caption = "KHU VỰC";
-            this.btn_KhuVuc.Id = 14;
-            this.btn_KhuVuc.Name = "btn_KhuVuc";
-            this.btn_KhuVuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_KhuVuc_ItemClick);
-            // 
-            // btn_LoaiMon
-            // 
-            this.btn_LoaiMon.Caption = "LOẠI MÓN";
-            this.btn_LoaiMon.Id = 15;
-            this.btn_LoaiMon.Name = "btn_LoaiMon";
-            this.btn_LoaiMon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_LoaiMon_ItemClick);
-            // 
             // Frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,5 +413,6 @@
         private DevExpress.XtraBars.BarButtonItem btn_LoaiMon;
         private DevExpress.XtraBars.BarButtonItem btn_NguyenLieu;
         private DevExpress.XtraBars.BarButtonItem btn_DonVi;
+        private DevExpress.XtraBars.BarButtonItem btn_NhaCungCap;
     }
 }

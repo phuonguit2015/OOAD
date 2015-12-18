@@ -61,5 +61,14 @@ namespace CoffeeManagement.BLL
 
             dbContext.SubmitChanges();
         }
+
+        public void CapNhatSoLuongTon(int? idNguyenLieu, int? SoLuong)
+        {
+            NGUYEN_LIEU _NguyenLieu = dbContext.NGUYEN_LIEUs.Single<NGUYEN_LIEU>(x => x.ID_Nguyen_Lieu == idNguyenLieu);
+            int? soLuongTon = _NguyenLieu.So_Luong_Ton + SoLuong;
+            _NguyenLieu.So_Luong_Ton = soLuongTon;
+
+            dbContext.SubmitChanges();
+        }
     }
 }

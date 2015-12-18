@@ -22,12 +22,22 @@ namespace CoffeeManagement.BLL
             dbContext.SubmitChanges();
         }
 
-        public bool KiemTraTenDonViTonTai(string _tenDonVi)
+        public bool KiemTraTenDonViTonTai(string _tenDonVi, int id=-1)
         {
             IEnumerable<DON_VI> query = from dv in dbContext.DON_VIs where dv.Ten_Don_Vi == _tenDonVi select dv;
-            if (query.Count() == 0)
-                return false;
-            return true;
+            if (0 < query.Count() && query.Count() <= 2)
+            {
+                if (id != -1)
+                {
+                    query = query.Where(m => m.ID_Don_Vi == id);
+                    if (query.Count() == 1)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
         }
 
         public void CapNhatDonVi(DON_VI dv)

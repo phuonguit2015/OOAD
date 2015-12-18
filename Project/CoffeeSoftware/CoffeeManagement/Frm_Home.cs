@@ -29,7 +29,18 @@ namespace CoffeeManagement
         #region Button
         private void btn_Kho_Hang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            string typeName = e.Item.Tag == null ? string.Empty : e.Item.Tag.ToString();
+            Form f = GetMdiFormByName(typeName);
+            if (f != null)
+                f.BringToFront();
+            else
+            {
+                f = new Frm_Nhap_Hang();
+                f.Name = f.GetType().ToString();
+                e.Item.Tag = f.Name;
+                f.MdiParent = this;
+                f.Show();
+            }
         }     
 
         private void btn_Ban_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -148,6 +159,23 @@ namespace CoffeeManagement
         {
 
         }
+
+        private void btn_NhaCungCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string typeName = e.Item.Tag == null ? string.Empty : e.Item.Tag.ToString();
+            Form f = GetMdiFormByName(typeName);
+            if (f != null)
+                f.BringToFront();
+            else
+            {
+                f = new Frm_Nha_Cung_Cap();
+                f.Name = f.GetType().ToString();
+                e.Item.Tag = f.Name;
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
         #endregion
 
 
