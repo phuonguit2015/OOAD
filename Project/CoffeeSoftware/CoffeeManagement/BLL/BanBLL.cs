@@ -13,7 +13,21 @@ namespace CoffeeManagement.BLL
             IEnumerable<BAN> query = from b in dbContext.BANs select b;
             return query;
         }
+        
+        public string LayKhuVucTheoIDBan(int idBan)
+        {
+            var b = dbContext.BANs.Single<BAN>(x => x.ID_Ban == idBan);
+            return dbContext.KHU_VUCs.Single<KHU_VUC>(k => k.ID_Khu_Vuc == b.ID_Khu_Vuc).Ten_Khu_Vuc;
+        }
 
+        public int LayIDTheoBan(string tenBan)
+        {
+            BAN _ban = dbContext.BANs.Single<BAN>(x => x.Ten_Ban == tenBan);
+            if (_ban != null)
+                return _ban.ID_Ban;
+            else
+                return -1;
+        }       
         public void ThemBanMoi(BAN _ban)
         {            
             dbContext.BANs.InsertOnSubmit(_ban);

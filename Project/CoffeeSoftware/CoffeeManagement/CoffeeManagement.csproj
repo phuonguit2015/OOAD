@@ -53,8 +53,23 @@
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v15.1, Version=15.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v15.1.Extensions, Version=15.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="LinqToExcel">
+      <HintPath>C:\Users\Kevin\Downloads\LinqToExcel_1.7.0\LinqToExcel_1.7.0\LinqToExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>C:\Users\Kevin\Downloads\LinqToExcel_1.7.0\LinqToExcel_1.7.0\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Remotion">
+      <HintPath>C:\Users\Kevin\Downloads\LinqToExcel_1.7.0\LinqToExcel_1.7.0\Remotion.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>C:\Users\Kevin\Downloads\LinqToExcel_1.7.0\LinqToExcel_1.7.0\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Interfaces">
+      <HintPath>C:\Users\Kevin\Downloads\LinqToExcel_1.7.0\LinqToExcel_1.7.0\Remotion.Interfaces.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -70,16 +85,26 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="zxing">
+      <HintPath>..\..\..\..\..\Si\OOAD\OOAD\Project\CoffeeSoftware\CoffeeManagement\bin\Debug\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation">
+      <HintPath>..\..\..\..\..\Si\OOAD\OOAD\Project\CoffeeSoftware\CoffeeManagement\bin\Debug\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\BanBLL.cs" />
     <Compile Include="BLL\DonViBLL.cs" />
+    <Compile Include="BLL\HoaDonBLL.cs" />
     <Compile Include="BLL\KhuVucBLL.cs" />
+    <Compile Include="BLL\KhuyenMaiBLL.cs" />
     <Compile Include="BLL\LoaiMonBLL.cs" />
     <Compile Include="BLL\MonBLL.cs" />
+    <Compile Include="BLL\NguoiDungBLL.cs" />
     <Compile Include="BLL\NguyenLieuBLL.cs" />
     <Compile Include="BLL\NhaCungCapBLL.cs" />
     <Compile Include="BLL\NhapHangBLL.cs" />
+    <Compile Include="BLL\PhanQuyenBLL.cs" />
     <Compile Include="BLL\ThamSoBLL.cs" />
     <Compile Include="DAL\CoffeeDB.designer.cs">
       <AutoGen>True</AutoGen>
@@ -92,6 +117,12 @@
     <Compile Include="Frm_Ban.Designer.cs">
       <DependentUpon>Frm_Ban.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DangNhap.designer.cs">
+      <DependentUpon>Frm_DangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Don_Vi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +134,12 @@
     </Compile>
     <Compile Include="Frm_Home.Designer.cs">
       <DependentUpon>Frm_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Khuyen_Mai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Khuyen_Mai.designer.cs">
+      <DependentUpon>Frm_Khuyen_Mai.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Khu_Vuc.cs">
       <SubType>Form</SubType>
@@ -140,17 +177,29 @@
     <Compile Include="Frm_Nha_Cung_Cap.Designer.cs">
       <DependentUpon>Frm_Nha_Cung_Cap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_PhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_PhanQuyen.designer.cs">
+      <DependentUpon>Frm_PhanQuyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Phuc_Vu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Phuc_Vu.Designer.cs">
       <DependentUpon>Frm_Phuc_Vu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Report.cs">
+    <Compile Include="Frm_QuanLyNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Report.Designer.cs">
-      <DependentUpon>Frm_Report.cs</DependentUpon>
+    <Compile Include="Frm_QuanLyNguoiDung.designer.cs">
+      <DependentUpon>Frm_QuanLyNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ThemNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ThemNguoiDung.designer.cs">
+      <DependentUpon>Frm_ThemNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Them_Ban_Moi.cs">
       <SubType>Form</SubType>
@@ -163,6 +212,12 @@
     </Compile>
     <Compile Include="Frm_Them_Don_Vi.Designer.cs">
       <DependentUpon>Frm_Them_Don_Vi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Them_Khuyen_Mai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Them_Khuyen_Mai.designer.cs">
+      <DependentUpon>Frm_Them_Khuyen_Mai.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Them_Khu_Vuc.cs">
       <SubType>Form</SubType>
@@ -198,20 +253,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Notification.cs" />
     <Compile Include="Utils\Util.cs" />
-    <EmbeddedResource Include="Frm_Report.resx">
-      <DependentUpon>Frm_Report.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="DAL\CoffeeDB.dbml.layout">
       <DependentUpon>CoffeeDB.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="Frm_Ban.resx">
       <DependentUpon>Frm_Ban.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DangNhap.resx">
+      <DependentUpon>Frm_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Don_Vi.resx">
       <DependentUpon>Frm_Don_Vi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Home.resx">
       <DependentUpon>Frm_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Khuyen_Mai.resx">
+      <DependentUpon>Frm_Khuyen_Mai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Khu_Vuc.resx">
       <DependentUpon>Frm_Khu_Vuc.cs</DependentUpon>
@@ -231,14 +289,26 @@
     <EmbeddedResource Include="Frm_Nha_Cung_Cap.resx">
       <DependentUpon>Frm_Nha_Cung_Cap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_PhanQuyen.resx">
+      <DependentUpon>Frm_PhanQuyen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Phuc_Vu.resx">
       <DependentUpon>Frm_Phuc_Vu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QuanLyNguoiDung.resx">
+      <DependentUpon>Frm_QuanLyNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ThemNguoiDung.resx">
+      <DependentUpon>Frm_ThemNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Them_Ban_Moi.resx">
       <DependentUpon>Frm_Them_Ban_Moi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Them_Don_Vi.resx">
       <DependentUpon>Frm_Them_Don_Vi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Them_Khuyen_Mai.resx">
+      <DependentUpon>Frm_Them_Khuyen_Mai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Them_Khu_Vuc.resx">
       <DependentUpon>Frm_Them_Khu_Vuc.cs</DependentUpon>
@@ -270,6 +340,7 @@
       <LastGenOutput>CoffeeDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

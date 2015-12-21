@@ -54,6 +54,9 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.tabMDI = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btn_NguoiDung = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_KhuyenMai = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_PhanQuyen = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMDI)).BeginInit();
             this.SuspendLayout();
@@ -85,9 +88,12 @@
             this.btn_Ban,
             this.btn_KhuVuc,
             this.btn_LoaiMon,
-            this.btn_NhaCungCap});
+            this.btn_NhaCungCap,
+            this.btn_NguoiDung,
+            this.btn_KhuyenMai,
+            this.btn_PhanQuyen});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 17;
+            this.barManager1.MaxItemId = 20;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -131,7 +137,10 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_LoaiMon, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_NguyenLieu, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_DonVi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_NhaCungCap, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_NhaCungCap, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_NguoiDung, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_PhanQuyen),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_KhuyenMai, true)});
             this.btn_DanhMuc.Name = "btn_DanhMuc";
             // 
             // btn_Ban
@@ -365,6 +374,27 @@
             // 
             this.tabMDI.MdiParent = this;
             // 
+            // btn_NguoiDung
+            // 
+            this.btn_NguoiDung.Caption = "NGƯỜI DÙNG";
+            this.btn_NguoiDung.Id = 17;
+            this.btn_NguoiDung.Name = "btn_NguoiDung";
+            this.btn_NguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_NguoiDung_ItemClick);
+            // 
+            // btn_KhuyenMai
+            // 
+            this.btn_KhuyenMai.Caption = "KHUYẾN MÃI";
+            this.btn_KhuyenMai.Id = 18;
+            this.btn_KhuyenMai.Name = "btn_KhuyenMai";
+            this.btn_KhuyenMai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_KhuyenMai_ItemClick);
+            // 
+            // btn_PhanQuyen
+            // 
+            this.btn_PhanQuyen.Caption = "PHÂN QUYỀN";
+            this.btn_PhanQuyen.Id = 19;
+            this.btn_PhanQuyen.Name = "btn_PhanQuyen";
+            this.btn_PhanQuyen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_PhanQuyen_ItemClick);
+            // 
             // Frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,5 +444,8 @@
         private DevExpress.XtraBars.BarButtonItem btn_NguyenLieu;
         private DevExpress.XtraBars.BarButtonItem btn_DonVi;
         private DevExpress.XtraBars.BarButtonItem btn_NhaCungCap;
+        private DevExpress.XtraBars.BarButtonItem btn_NguoiDung;
+        private DevExpress.XtraBars.BarButtonItem btn_PhanQuyen;
+        private DevExpress.XtraBars.BarButtonItem btn_KhuyenMai;
     }
 }
